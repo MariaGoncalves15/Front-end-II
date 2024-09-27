@@ -1,16 +1,17 @@
-/*const titulo = document.querySelector('h1');
+const titulo = document.querySelector('h1');
 
 console.log(titulo.innerHTML)
 console.log(titulo.innerText)
 console.log(titulo.textContent)
 
-titulo.textContent = 'Parágrafo Novo'*/
-
-
+titulo.textContent = 'Parágrafo Novo'
+/*const p = document.querySelector('Parágrafo Novo');
+p.style.backgroundColor = 'white';*/
 
 
 
 const body = document.querySelector('body');
+body.style.backgroundColor = 'black';
 const ancora = document.createElement('a');
 
 
