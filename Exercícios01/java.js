@@ -16,13 +16,13 @@ function meuMenu(){
 
 
 function percorrerOsItens() {
+    const ul = document.querySelector('ul');
     itensMenu.forEach (item => {
-        const ul = document.querySelector('ul');
         let itens = document.createElement('li');
         let ancora = document.createElement('a');
         ancora.setAttribute('href', item.url);
         ancora.style.textDecoration = 'none';
-        itens.appendChild()
+        itens.appendChild();
 
     })
 };
