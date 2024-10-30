@@ -21,8 +21,10 @@ function percorrerOsItens() {
         let itens = document.createElement('li');
         let ancora = document.createElement('a');
         ancora.setAttribute('href', item.url);
+        ancora.textContent = item.nome.toUpperCase();
         ancora.style.textDecoration = 'none';
-        itens.appendChild();
+        ancora.style.color = 'black';
+        ul.appendChild();
 
     })
 };
