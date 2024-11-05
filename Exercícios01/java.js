@@ -1,7 +1,7 @@
 const itensMenu = [
     { nome: 'inicio', url: 'index.html' },
-    { nome: 'Sobre', url: 'sobre.html' },
-    { nome: 'Contato', url: 'contato.html' }
+    { nome: 'Sobre', url: 'index.html' },
+    { nome: 'Contato', url: 'index.html' }
 ];
 
 function meuMenu(){
@@ -22,23 +22,29 @@ function percorrerOsItens() {
         let ancora = document.createElement('a');
         ancora.setAttribute('href', item.url);
         ancora.textContent = item.nome.toUpperCase();
+        itens.appendChild(ancora);
+        // ancora.style.textTransform = 'uppercase';
         ancora.style.textDecoration = 'none';
         ancora.style.color = 'black';
-        ul.appendChild();
-
+        ul.appendChild(itens);
     })
 };
+
+function style(){
+    const header = document.querySelector('header');
+    const ul = document.querySelector('ul');
+    header.style.backgroundColor = '#002F6C';
+    header.style.fontFamily = 'Arial';
+    ul.style.display = 'flex';
+    ul.style.flexDirection = 'row';
+    ul.style.justifyContent = 'center';
+    ul.style.alignItems = 'center';
+    ul.style.height = '40px';
+    ul.style.gap = '20px';
+    ul.style.listStyleType = 'none';
+    
+}
 meuMenu();
 percorrerOsItens();
-
-    /*let item02 = document.createElement('li');
-    let item03 = document.createElement('li');
-    item01.textContent = 'item 01';
-    item02.textContent = 'item 02';
-    item03.textContent = 'item 03';
-
-    lista.appendChild(item01);
-    lista.appendChild(item02);
-    lista.appendChild(item03);*/
-
+style();
 
