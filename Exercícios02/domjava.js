@@ -26,7 +26,6 @@ const clique = () => {
     alert('Botão Clicado com sucesso!')
 }
 
-
 function pressTecla() {
     if (window.getComputedStyle(divimg, null).getPropertyValue
     ('background-color') === 'rgb(0, 0, 0)') {
