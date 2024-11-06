@@ -9,6 +9,6 @@ const imgAmpliada = document.querySelector('#imgAmpliada')
             imgAmpliada.dtyle.opacity = "0.4";
             imgAmpliada.dtyle.opacity = "1";
 
-        )
+        );
 
-    })
+    });
