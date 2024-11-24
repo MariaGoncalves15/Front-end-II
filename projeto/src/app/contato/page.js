@@ -1,5 +1,5 @@
 import Link from "next/link"
-import style from "./sobre.module.css";
+import style from "./contato.module.css"
 
 export function Header() {
     return(
@@ -15,15 +15,12 @@ export function Header() {
     )
 }
 
-export default function Sobre () {
+export default function Contato () {
     return (
         <main>
-            <div>
-            <h1>Sobre</h1>
-            <p className={style.paragrafo} >Segunda Página</p>
+            <h1>Contato</h1>
+            <p className={style.paragrafo} >Terceira Página</p>
             <p id={style.paragrafoUnico}>Segundo páragrafo especial</p>
-            </div>
         </main>
     )
 }
-

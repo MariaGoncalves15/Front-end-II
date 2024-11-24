@@ -1,5 +1,5 @@
 :root {
-  --background: #ffffff;
+  --background: #11a263;
   --foreground: #171717;
 }
 
@@ -42,7 +42,10 @@ a {
 }
 
 h1{
-  color: darkorange;
+  color: rgb(0, 0, 0);
   font-weight: bold;
   text-align: center;
+  font-size: larger;
+  margin-top: 20px;
 }
+
