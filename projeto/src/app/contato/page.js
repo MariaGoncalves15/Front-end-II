@@ -20,7 +20,6 @@ export default function Contato () {
         <main>
             <h1>Contato</h1>
             <p className={style.paragrafo} >Terceira Página</p>
-            <p id={style.paragrafoUnico}>Segundo páragrafo especial</p>
         </main>
     )
 }

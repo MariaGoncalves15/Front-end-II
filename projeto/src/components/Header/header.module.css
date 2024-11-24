@@ -3,3 +3,9 @@
     display: block;
     background-color: rgb(134, 220, 191);
 }
+
+.button{
+    color: blueviolet;
+    padding: 10px;
+
+}
