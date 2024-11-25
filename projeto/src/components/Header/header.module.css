@@ -1,11 +1,22 @@
 .li{
     text-align: center;
     display: block;
-    background-color: rgb(134, 220, 191);
 }
 
-.button{
-    color: blueviolet;
-    padding: 10px;
+.logo{
+    display: flex;
+    margin-left: 30px;
+}
 
+.imagem{
+    border-radius: 35px;
+}
+
+.meuHeader{
+    margin-top: 10px;
+}
+
+.Pegatudo{
+    text-align: center;
+    background-color: rgb(134, 220, 191);
 }

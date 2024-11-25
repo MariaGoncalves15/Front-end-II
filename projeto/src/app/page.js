@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import style from "./page.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,10 +17,12 @@ export function Header() {
 }
 
 export default function Home() {
-  const nome = 'Maria Eduarda'
   return (
-    <div>
+    <main>
+        <div>
         <h1>Projeto React e Next</h1>
-    </div>
+        <p className={style.paragrafo}>Primeira Página</p>
+        </div>
+    </main>
   );
 }

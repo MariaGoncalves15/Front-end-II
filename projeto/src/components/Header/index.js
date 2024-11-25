@@ -5,17 +5,15 @@ import Image from "next/image";
 import {useState} from 'react';
 
 export default function Header() {
-    const [showMenu, setShowMenu] = useState(true)
     return(
-        <header>
-            <button className="button" onClick={()=>setShowMenu(!showMenu)}>Clique</button>
+        <header className={style.Meuheader}>
+            <div className={style.Pegatudo}>
             {
-                showMenu &&
                 <nav>
                     <ul>
                         <div>
                         <div className={style.logo}>
-                            <Image className={style.imagem} src="/images/Logo.png" alt="Imagem style" width={110} height={110}/>
+                            <Image className={style.imagem} src="/images/Logo.png" alt="Imagem style" width={75} height={75}/>
                         </div>
                             <li className={style.li}><Link href="/">Home</Link></li>
                             <li className={style.li}><Link href="/sobre">Sobre</Link></li>
@@ -24,6 +22,7 @@ export default function Header() {
                     </ul>
                 </nav>
             }
+            </div>
         </header>
     )
 }
