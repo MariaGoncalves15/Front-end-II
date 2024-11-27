@@ -1,11 +1,12 @@
 'use client';
-import Link from "next/link";
 import "../../app/globals.css";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import style from "./header.module.css";
 import Image from "next/image";
-import { useEffect, useState } from 'react';
-import { FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
+
 
 export default function Header() {
     const [showMenu, setShowMenu] = useState(false);
@@ -28,24 +29,23 @@ export default function Header() {
         <header className={style.Meuheader}>
             <div className={style.Pegatudo}>
             <div className={style.logo}>
-                            <Image className={style.imagem} src="/images/Logo.png" alt="Imagem style" width={75} height={75}/>
-                        </div>
+                    <Image className={style.imagem} src="/images/Logo.png" alt="Imagem style" width={75} height={75}/>
+            </div>
 
                 <div className={style.container_menuMenor} onClick={tooggleMenu}>
-                    {showMenu ? <IoMdClose color="white" /> : <FaBars color="white"/>} 
+                    {showMenu ? <IoMdClose color="black" /> : <FaBars color="black"/>} 
                 </div>
             
             <nav className={`${style.nav} ${showMenu? style.nav_active : ''}` || window.innerWidth > 1500}>
                 <ul className={style.ul}>
                     <div>
-                        
                         <li className={style.li}><Link className={style.link} href="/">Home</Link></li>
                         <li className={style.li}><Link className={style.link} href="/sobre">Sobre</Link></li>
                         <li className={style.li}><Link className={style.link} href="/contato">Contato</Link></li>
                     </div>
                 </ul>
             </nav>
-            
+
             </div>
         </header>
     )

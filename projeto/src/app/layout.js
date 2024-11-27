@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header"
 
 export const metadata = {
-  title: "Maria Linda",
+  title: "Projeto React e Next.js",
   description: "Minha Apliação de Front end II",
   charset: 'UTF-8',
   author: 'Maria Eduarda Gonçalves',

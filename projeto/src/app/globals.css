@@ -47,5 +47,14 @@ h1{
   font-weight: bold;
   text-align: center;
   font-size: larger;
-  margin-top: 20px;
+  margin-top: 30px;
+}
+
+/*HEADER*/
+:root{
+  --cor-de-fundo-menu:#b9bcd7;
+  --cor-das-letras:white;
+  --cor-do-hover-letras:#325D79;
+  --cor-menu-menor: rgba(24, 31, 99, 0.5);
+  --cor-menu-menor: blue;
 }

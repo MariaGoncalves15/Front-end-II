@@ -1,8 +1,3 @@
-.li{
-    text-align: center;
-    display: block;
-}
-
 .logo{
     display: flex;
     margin-left: 30px;
@@ -10,13 +5,124 @@
 
 .imagem{
     border-radius: 35px;
+    margin-top: 20px;
 }
 
 .meuHeader{
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--cor-de-fundo-menu);
+    padding:10px 15px;
+    position: relative;
+    text-align: center;
 }
 
 .Pegatudo{
     text-align: center;
     background-color: rgb(134, 220, 191);
+}
+
+/* NAVEGAÇÃO*/
+.nav{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s ease;
+    transform: translateY(-10px);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); 
+    flex-direction: row;
+
+}    
+.nav_active{
+    /* */
+    display: none;
+}
+
+.ul{
+    display: flex;
+    padding: 0;
+    text-align: center;
+    flex-direction: row;
+    gap: 2rem;
+    padding-left: 0px;
+    margin-bottom: 10px;
+}
+.li{
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    margin-left: 450px;
+    justify-content: center;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+.link{
+    color: black;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    font-size: 17px;
+    text-align: center;
+}
+.link:hover{
+    color: #075231;
+}
+.container_menuMenor{
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    text-align: center;
+}
+/* .FaBars{
+    cursor: pointer;
+    display: none;
+    font-size: 2rem;
+
+} */
+
+@media(max-width:600px){
+    .nav{
+        display: none;
+        
+     }
+    .nav_active{
+        display: flex;
+        text-align: center;
+        visibility: visible;
+        transform: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 50%;
+        height: 150px;
+        gap: 0;
+        z-index: 1000;
+        background-color: rgba(24, 31, 99, 0.85);
+        border-radius: 5px; 
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0); 
+    }
+    /* .nav_active{
+        display: flex;
+    } */
+    .ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 1rem;
+        left: 0px;
+        width: 100%;
+
+    }
+    .li{
+        margin: 0 auto;
+    }
+    .container_menuMenor{
+        display: block;
+    }
+    
 }
