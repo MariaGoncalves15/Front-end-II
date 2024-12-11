@@ -43,6 +43,8 @@ export default function Header() {
                         <li className={style.li}><Link className={style.link} href="/sobre">Sobre</Link></li>
                         <li className={style.li}><Link className={style.link} href="/contato">Contato</Link></li>
                         <li className={style.li}><Link className={style.link} href="/listas">Listas</Link></li>
+                        <li className={style.li}><Link className={style.link} href="/props">Props</Link></li>
+                        <li className={style.li}><Link className={style.link} href="/filter">Filter</Link></li>
                     </div>
                 </ul>
             </nav>
