@@ -12,7 +12,7 @@ export default function Efeitos() {
 
     const getUfs = async () => {
         try{
-            const response = await fetch ('https://servicodados.ibge.gov.br/api/docs/localidades#api-UFs-estadosGet');
+            const response = await fetch ('https://servicodados.ibge.gov.br/api/v1/localidades/estados');
             if(!response.ok) {
                 throw new Error('Erro ao buscar dados: ' +response.statusText);
             }
