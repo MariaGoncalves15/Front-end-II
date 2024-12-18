@@ -6,7 +6,7 @@ export default function Filter() {
     const nomes = ['Wagner', 'Beatriz', 'Mariana', 'Maria', 'Ana']
     const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const pares = nums.filter(num => (num%2==0))
-    const nomesBusca = nomes.filter(nome => (nome.toLowerCase().startsWith(busca.toLowerCase)));
+    const nomesBusca = nomes.filter(nome => (nome.toLowerCase().includes(busca.toLowerCase)));
 
     console.log(nums)
     console.log(pares)
