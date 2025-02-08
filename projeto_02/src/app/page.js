@@ -12,9 +12,9 @@ export default function Home() {
           Oferecemos um atendimento humanizado, 
           tecnologia de ponta e uma ampla gama de especialidades 
           médicas para garantir seu bem-estar.</p>
+          <p>projetooo</p>
         </div>
       </div>
-        
     </main>
   );
 }
