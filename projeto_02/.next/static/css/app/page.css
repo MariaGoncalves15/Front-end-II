@@ -1,16 +1,25 @@
 /*!*******************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/app/page.module.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************/
-/*usado apenas para um componente*/
-.page_imagem__gpuxD{
-    border-radius: 20px;
-    display: block;
-    margin-top: 10px;
+.page_DivMenu__QJgjf{
+  background-color: #ffffff;
+}
+
+.page_DivPegatudo__dha9s{
+  background-color: rgb(255, 255, 255);
+}
+.page_DivLogo__p0mCN{
+  margin-top: 20px;
+  text-align: right;
 }
 
 .page_paragrafo__X8XYK{
-    color: black;
-    text-align: center;
-    margin-top: 10px;
-  }
+  margin-top: 10px;
+  text-align: center;
+}
+
+.page_h1__fdyfB{
+  margin-top: 50px;
+  text-align: center;
+}
 
