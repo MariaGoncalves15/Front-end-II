@@ -1,5 +1,6 @@
 'use client'
 import { useEffect } from 'react';
+import Link from "next/link";
 import style from './medicos.module.css';
 
 export default function Médicos() {

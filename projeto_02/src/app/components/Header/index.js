@@ -10,14 +10,12 @@ export default function Header() {
             <div className={style.Divlogo}>
                     <Image className={style.imagem} src="/images/Med cure.png" alt="Imagem style" width={100} height={100}/>
             </div>
-            <nav >
+            <nav>
                 <ul className={style.ul}>
-                    <div>
                         <li className={style.li}><Link className={style.link} href="/">Home</Link></li>
                         <li className={style.li}><Link className={style.link} href="/medicos">Médicos</Link></li>
-                        <li className={style.li}><Link className={style.link} href="/">Pacientes</Link></li>
-                        <li className={style.li}><Link className={style.link} href="/">Consultas</Link></li>
-                    </div>
+                        <li className={style.li}><Link className={style.link} href="/pacientes">Pacientes</Link></li>
+                        <li className={style.li}><Link className={style.link} href="/consultas">Consultas</Link></li>
                 </ul>
             </nav>
             </div>

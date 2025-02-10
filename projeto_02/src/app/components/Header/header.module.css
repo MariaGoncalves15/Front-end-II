@@ -1,32 +1,40 @@
 
 .imagem{
     border-radius: 35px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
 
 .Pegatudo{
-    padding-left: 20px;
-    display: flex;
     background-color: rgb(73, 134, 192);
+    display: flex;
+    justify-content: space-between; /* Empurra o logo para um lado e o menu para o outro */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%;
+    
 }
 
 /* NAVEGAÇÃO*/
 .nav{
     display: flex;
     justify-content: center;
-
+    flex-direction: row;
 }
 
 .ul{
-    margin-top: 20px;
     display: flex;
-    justify-items: center;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end; /* Alinha o menu à direita */
+    
 }
 .li{
     display: flex;
-    margin-left: 50px;
-    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 15px;
 }
 .link{
     color: rgb(28, 58, 116);
@@ -45,7 +53,7 @@
     font-size: 2rem;
 }
 
-@media(max-width:600px){
+@media(max-width:400px){
     .nav{
         display: none;
         
@@ -62,7 +70,6 @@
         z-index: 1000;
         border-radius: 5px; 
         opacity: 1;
-        visibility: visible;
         transform: translateY(0); 
     }
 
