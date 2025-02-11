@@ -12,10 +12,10 @@ export default function Header() {
             </div>
             <nav>
                 <ul className={style.ul}>
-                        <li className={style.li}><Link className={style.link} href="/">Home</Link></li>
-                        <li className={style.li}><Link className={style.link} href="/medicos">Médicos</Link></li>
-                        <li className={style.li}><Link className={style.link} href="/pacientes">Pacientes</Link></li>
-                        <li className={style.li}><Link className={style.link} href="/consultas">Consultas</Link></li>
+                    <li className={style.li}><Link className={style.link} href="/">Home</Link></li>
+                    <li className={style.li}><Link className={style.link} href="/medicos">Médicos</Link></li>
+                    <li className={style.li}><Link className={style.link} href="/pacientes">Pacientes</Link></li>
+                    <li className={style.li}><Link className={style.link} href="/consultas">Consultas</Link></li>
                 </ul>
             </nav>
             </div>

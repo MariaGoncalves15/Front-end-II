@@ -6,7 +6,7 @@ export const metadata = {
   title: "Projeto Front e Back",
   description: "Minha Apliação de Front end II",
   charset: 'UTF-8',
-  author: 'Maria Eduarda Gonçalves',
+  author: 'Maria Eduarda Gonçalves Lima',
   keywords:'HTML, CSS, Javascript, React, Next.js',
 };
 

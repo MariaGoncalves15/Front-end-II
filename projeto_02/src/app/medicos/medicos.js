@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from 'react';
 import Link from "next/link";
-import style from './consultas.module.css';
+import style from './medicos.module.css';
 
 export default function Médicos() {
     return (
@@ -14,20 +14,20 @@ export default function Médicos() {
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Médico</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Email</th>
                     <th>Especialidade</th>
-                    <th>Paciente</th>
-                    <th>Tipo</th>
                   </tr>
                 </thead>
                 <tbody>
                   {data.map((item) => (
                     <tr key={item.id}>
                       <td>{item.id}</td>
-                      <td>{item.médico}</td>
+                      <td>{item.nome}</td>
+                      <td>{item.telefone}</td>
+                      <td>{item.email}</td>
                       <td>{item.especialidade}</td>
-                      <td>{item.paciente}</td>
-                      <td>{item.tipo}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -38,4 +38,3 @@ export default function Médicos() {
       </main>
     );
   }
-
