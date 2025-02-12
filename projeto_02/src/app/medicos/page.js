@@ -2,9 +2,15 @@
 import { useEffect } from 'react';
 import Link from "next/link";
 import style from './medicos.module.css';
-// import data from 
+
+// const [BuscarMedicos,]
+
+// export default function BuscarMedicos() {
+    
+// };
 
 export default function Médicos() {
+ 
     return (
       <main>
         <div className={style.DivMenu}>
@@ -22,15 +28,15 @@ export default function Médicos() {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((item) => (
-                    <tr key={item.id}>
-                      <td className={style.td}>{item.id}</td>
-                      <td className={style.td}>{item.nome}</td>
-                      <td className={style.td}>{item.telefone}</td>
-                      <td className={style.td}>{item.email}</td>
-                      <td className={style.td}>{item.especialidade}</td>
+                  {/* {BuscarMedicos.map((medico) => (
+                    <tr key={medico.id}>
+                      <td className={style.td}>{medico.id}</td>
+                      <td className={style.td}>{medico.nome}</td>
+                      <td className={style.td}>{medico.telefone}</td>
+                      <td className={style.td}>{medico.email}</td>
+                      <td className={style.td}>{medico.especialidade}</td>
                     </tr>
-                  ))}
+                  ))} */}
                 </tbody>
               </table>
             </div>
