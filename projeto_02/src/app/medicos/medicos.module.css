@@ -19,28 +19,28 @@
     text-align: center;
 }
   
-table {
+.table {
     width: 100%;
     border-collapse: collapse;
     min-width: 600px;
 }
   
-th, td {
+.th, td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
 }
   
-th {
+.th {
     background-color: #f4f4f4;
     font-weight: bold;
 }
   
-tr:nth-child(even) {
+.tr:nth-child(even) {
     background-color: #f9f9f9;
 }
   
-tr:hover {
+.tr:hover {
     background-color: #f1f1f1;
     transition: 0.3s;
 }
