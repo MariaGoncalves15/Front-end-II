@@ -2,7 +2,7 @@
     background-color: #ffffff;
 }
 
-.DivTable{
+.TodaTable{
     color: black;
     width: 100%;
     overflow-x: auto; /* Responsividade para telas menores */
@@ -19,13 +19,13 @@
     text-align: center;
 }
   
-.table {
+.Tabela {
     width: 100%;
     border-collapse: collapse;
     min-width: 600px;
 }
   
-.th, td {
+.td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
@@ -46,11 +46,14 @@
 }
   
   @media (max-width: 600px) {
-    table {
+    .Tabela {
       font-size: 14px;
     }
     
-    th, td {
+    .th{
+        padding: 8px;
+    }
+    .td {
       padding: 8px;
     }
   }
