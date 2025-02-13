@@ -24,10 +24,11 @@
       "static/css/app/pacientes/page.css",
       "static/chunks/app/pacientes/page.js"
     ],
-    "/_not-found/page": [
+    "/consultas/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/css/app/consultas/page.css",
+      "static/chunks/app/consultas/page.js"
     ]
   }
 }

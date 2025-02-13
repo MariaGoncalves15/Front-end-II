@@ -8,10 +8,68 @@
 
 .h1_titulo{
     color: black;
-    margin-top: 20px;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .paragrafo{
     margin-top: 10px;
     text-align: center;
 }
+
+.TodaTable{
+    color: black;
+    width: 100%;
+    overflow-x: auto; /* Responsividade para telas menores */
+    padding: 10px;
+    display: block;
+    text-align: center; /* Centraliza conteúdo inline */
+}
+  
+.Tabela {
+    margin: auto; /* Centraliza horizontalmente */
+    width: 60%; /* Defina um tamanho adequado */
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    min-width: 400px;
+    border-radius: 15px;
+    text-align: center;
+}
+  
+.td {
+    border: 3px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+  
+.th {
+    background-color: #4476ac;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+}
+  
+.tr:nth-child(even) {
+    background-color: #e9eced;
+}
+  
+.tr:hover {
+    background-color: #f1f1f1;
+    transition: 0.3s;
+}
+  
+  @media (max-width: 400px) {
+    .Tabela {
+      font-size: 20px;
+    }
+    
+    .th{
+        padding: 8px;
+    }
+    .td {
+      padding: 8px;
+    }
+  }
+  
