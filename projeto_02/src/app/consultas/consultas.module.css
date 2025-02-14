@@ -50,6 +50,11 @@
     font-weight: bold;
     padding: 15px;
 }
+
+.td:hover{
+    background-color: #93beec;
+
+}
   
 .tr:nth-child(even) {
     background-color: #e9eced;
