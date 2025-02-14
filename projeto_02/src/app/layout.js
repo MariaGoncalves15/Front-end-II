@@ -3,10 +3,10 @@ import "./globals.css";
 import Header from "@/app/components/Header"
 
 export const metadata = {
-  title: "Projeto Front e Back",
+  title: "Clínica Médica",
   description: "Minha Apliação de Front end II",
   charset: 'UTF-8',
-  author: 'Maria Eduarda Gonçalves',
+  author: 'Maria Eduarda Gonçalves Lima',
   keywords:'HTML, CSS, Javascript, React, Next.js',
 };
 

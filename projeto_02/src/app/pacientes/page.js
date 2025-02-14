@@ -1,37 +1,47 @@
 'use client'
-import { useEffect } from 'react';
-import Link from "next/link";
 import style from './pacientes.module.css';
-
-// const [BuscarPacientes, setPacientes, pushPaciente]
-
-const BuscarPacientes = async () => {
-  try {
-    const response = await fetch('https://api-clinica-2a.onrender.com/medicos');
-
-    if (!response.ok) {
-      throw new Error (`Erro ao buscar dados da API: ${response.statusText}`);
-    }
-
-    const pushPaciente = await response.json();
-
-    setPacientes(pushPaciente);
-
-    console.log(pushPaciente);
-  } catch (error) {
-    console.error('Ocorreu um erro ao buscar os dados da API:', error.message);
-  }
-};
-
+import { useEffect, useState } from "react";
 
 export default function Pacientes() {
+  
+  const [paciente, setPacientes] = useState([])
+  const [busca, setBusca] = useState('');
+  const pacientes_filtrados = paciente.filter(pacientes => (pacientes.nome.toLowerCase().startsWith(busca.toLowerCase())));
+  
+  const BuscarPacientes = async() => {
+    try {
+      const response = await fetch ('https://api-clinica-2a.onrender.com/pacientes');
+      if (!response.ok) {
+        throw new error (`Erro ao buscar dados da API: ${response.statusText}`);
+      }
+      const data = await response.json();
+      setPacientes(data);
+      console.log(data);
+    } catch (error) {
+      console,log('Ocorreu um erro ao buscar os dados da API:', error.message)
+    }
+
+
+  }
+  useEffect(() => {
+    BuscarPacientes();
+  }, [])
+
+
     return (
       <main>
         <div className={style.DivMenu}>
         <h1 className={style.h1_titulo}>Lista de Pacientes</h1>
+
+        <div className={style.inputTabela}>
+          <button>
+            <input type="text" 
+              placeholder='Buscar por nome do médico '/>
+          </button>
+        </div>
         
-            <div className={style.DivTable}>
-              <table className={style.TodaTabela}>
+            <div className={style.TodaTable}>
+              <table className={style.Tabela}>
                 <thead>
                   <tr className={style.tr}>
                     <th className={style.th}>ID</th>
@@ -42,13 +52,13 @@ export default function Pacientes() {
                   </tr>
                 </thead>
                 <tbody>
-                  {pushPaciente.map((paciente) => (
+                  {pacientes_filtrados.map((paciente) => (
                     <tr key={paciente.id}>
-                      <td>{paciente.id}</td>
-                      <td>{paciente.nome}</td>
-                      <td>{paciente.telefone}</td>
-                      <td>{paciente.email}</td>
-                      <td>{paciente.cpf}</td>
+                      <td className={style.td}>{paciente.id}</td>
+                      <td className={style.td}>{paciente.nome}</td>
+                      <td className={style.td}>{paciente.telefone}</td>
+                      <td className={style.td}>{paciente.email}</td>
+                      <td className={style.td}>{paciente.cpf}</td>
                     </tr>
                   ))}
                 </tbody>
