@@ -1,6 +1,4 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/medicos/page": "app/medicos/page.js",
-  "/pacientes/page": "app/pacientes/page.js",
-  "/consultas/page": "app/consultas/page.js"
+  "/pacientes/page": "app/pacientes/page.js"
 }

@@ -1,11 +1,15 @@
 'use client'
 import style from './medicos.module.css';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 
 export default function Médicos() {
   
   const [medico, setMedicos] = useState([])
+  const [filteredMedicos, setFilteredMedicos] = useState([]);
+  const [search, setSearch] = useState("");
+  const [showList, setShowList] = useState(false);
+  const containerRef = useRef(null);
   const [busca, setBusca] = useState('');
   const medicos_filtrados = medico.filter(medicos => (medicos.nome.toLowerCase().startsWith(busca.toLowerCase())));
   
@@ -25,20 +29,69 @@ export default function Médicos() {
 
   }
   useEffect(() => {
+    if (showList) {
+      fetch("https://api-clinica-2a.onrender.com/medicos")
+        .then((response) => response.json())
+        .then((data) => setMedicos(data))
+        .catch((error) => console.error("Erro ao buscar médicos:", error));
+    }
+  }, [showList]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setShowList(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (search) {
+      const filtered = medico.filter((medico) =>
+        medico.nome.toLowerCase().startsWith(search.toLowerCase())
+      );
+      setFilteredMedicos(filtered);
+    } else {
+      setFilteredMedicos([]);
+    }
+  }, [search, medico]);
+
+
+  useEffect(() => {
     BuscarMedicos();
-  }, [])
+  })
 
     return (
       <main>
         <div className={style.DivMenu}>
         <h1 className={style.h1_titulo}>Lista de Médicos</h1>
 
-        <div className={style.inputTabela}>
-          <button>
-            <input type="text" 
-              placeholder='Buscar por nome do médico '/>
-          </button>
-
+        <div className={style.inputTabela} ref={containerRef}>
+            <div className={style.meu_button}>
+            <button className={style.meu_button}
+            onClick={() => setShowList(true)}>Buscar Médicos</button> 
+            {showList && (
+              <div>
+                <input className={style.meu_input}
+                type="text" 
+                placeholder="Digite o nome do médico"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                />
+                
+                <ul className={style.style_ul}>
+                  {filteredMedicos.map((medico) => (
+                    <li key={medico.id}>{medico.nome}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
 
             <div className={style.TodaTable}>

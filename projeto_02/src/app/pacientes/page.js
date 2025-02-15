@@ -1,10 +1,14 @@
 'use client'
 import style from './pacientes.module.css';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef  } from "react";
 
 export default function Pacientes() {
   
   const [paciente, setPacientes] = useState([])
+  const [FilteredPacientes, setFilteredPacientes] = useState([]);
+  const [search, setSearch] = useState("");
+  const [showList, setShowList] = useState(false);
+  const containerRef = useRef(null);
   const [busca, setBusca] = useState('');
   const pacientes_filtrados = paciente.filter(pacientes => (pacientes.nome.toLowerCase().startsWith(busca.toLowerCase())));
   
@@ -24,6 +28,41 @@ export default function Pacientes() {
 
   }
   useEffect(() => {
+    if (showList) {
+      fetch("https://api-clinica-2a.onrender.com/pacientes")
+        .then((response) => response.json())
+        .then((data) => setPacientes(data))
+        .catch((error) => console.error("Erro ao buscar pacientes:", error));
+    }
+  }, [showList]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setShowList(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (search) {
+      const filtered = paciente.filter((paciente) =>
+        paciente.nome.toLowerCase().startsWith(search.toLowerCase())
+      );
+      setFilteredPacientes(filtered);
+    } else {
+      setFilteredPacientes([]);
+    }
+  }, [search, paciente]);
+
+
+
+  useEffect(() => {
     BuscarPacientes();
   }, [])
 
@@ -32,12 +71,28 @@ export default function Pacientes() {
       <main>
         <div className={style.DivMenu}>
         <h1 className={style.h1_titulo}>Lista de Pacientes</h1>
-
-        <div className={style.inputTabela}>
-          <button>
-            <input type="text" 
-              placeholder='Buscar por nome do médico '/>
-          </button>
+        </div>
+        <div className={style.inputTabela} ref={containerRef}>
+            <div className={style.meu_button}>
+            <button className={style.meu_button}
+            onClick={() => setShowList(true)}>Buscar Pacientes</button> 
+            {showList && (
+              <div>
+                <input className={style.meu_input}
+                type="text" 
+                placeholder="Digite o nome do paciente"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                />
+                
+                <ul className={style.style_ul}>
+                  {FilteredPacientes.map((paciente) => (
+                    <li key={paciente.id}>{paciente.nome}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
         
             <div className={style.TodaTable}>
@@ -65,7 +120,6 @@ export default function Pacientes() {
               </table>
             </div>
             
-        </div>
       </main>
     );
   }
