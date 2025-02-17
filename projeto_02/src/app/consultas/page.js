@@ -1,13 +1,18 @@
 'use client'
 import style from './consultas.module.css';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Consultas() {
   
   const [consulta, setConsultas] = useState([])
+  const [filteredMedicos, setFilteredMedicos] = useState([]);
+  const [search, setSearch] = useState("");
+  const [showList, setShowList] = useState(false);
+  const containerRef = useRef(null);
   const [getMedico, setBuscaMedico] = useState('');
   const [getPaciente, setBuscaPaciente] = useState('');
-  const consultas_filtrados = consulta.filter(consultas => (consultas.nome.toLowerCase().startsWith(busca.toLowerCase())));
+  const consultas_filtrados = consulta.filter(consultas => (consultas.medico.toLowerCase().startsWith(getMedico.toLowerCase()) && consultas.paciente.toLocaleLowerCase().startsWith(getPaciente.toLocaleLowerCase())));
+  
   
   const BuscarConsultas = async() => {
     try {
@@ -22,8 +27,8 @@ export default function Consultas() {
       console,log('Ocorreu um erro ao buscar os dados da API:', error.message)
     }
 
-
   }
+
   useEffect(() => {
     BuscarConsultas();
   }, [])
@@ -33,23 +38,52 @@ export default function Consultas() {
         <div className={style.DivMenu}>
         <h1 className={style.h1_titulo}>Lista de Consultas</h1>
 
-        <div className={style.inputTabela}>
-          <button>
-            <input type="text" 
-              placeholder='Buscar por nome do médico '
-              value={getMedico}
-              onChange={(ev) => setBuscaMedico (ev.target.value)}/>
-          </button>
+        <div className={style.inputTabela} ref={containerRef}>
+            <div className={style.meu_button}>
+            <button className={style.meu_button}
+            onClick={() => setShowList(true)}>Buscar Médicos</button> 
+            {showList && (
+              <div>
+                <input className={style.meu_input}
+                type="text" 
+                placeholder="Digite o nome do médico"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                />
+                
+                <ul className={style.style_ul}>
+                  {filteredMedicos.map((medico) => (
+                    <li key={medico.id}>{medico.nome}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
 
-        <div className={style.inputTabela}>
-          <button>
-            <input type="text" 
-              placeholder='Buscar por nome do paciente '
-              value={getPaciente}
-              onChange={(ev) => setBuscaPaciente (ev.target.value)}/>
-          </button>
-        </div>
+        <div className={style.inputTabela} ref={containerRef}>
+            <div className={style.meu_button}>
+            <button className={style.meu_button}
+            onClick={() => setShowList(true)}>Buscar Pacientes</button> 
+            {showList && (
+              <div>
+                <input className={style.meu_input}
+                type="text" 
+                placeholder="Digite o nome do paciente"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                />
+                
+                <ul className={style.style_ul}>
+                  {FilteredPacientes.map((paciente) => (
+                    <li key={paciente.id}>{paciente.nome}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>    
+
         
             <div className={style.TodaTable}>
               <table className={style.Tabela}>
