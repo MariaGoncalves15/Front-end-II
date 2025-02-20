@@ -13,13 +13,54 @@ export default function Header() {
                     <Image className={style.imagem} src="/images/Med cure.png" alt="Imagem style" width={100} height={100}/>
             </div>
             <nav>
-                
                     <ul className={style.ul}>
-                        <li className={style.li}><Link className={style.link} href="/">Home</Link></li>
-                        <li className={style.li}><Link className={style.link} href="/medicos">Médicos</Link></li>
-                        <li className={style.li}><Link className={style.link} href="/pacientes">Pacientes</Link></li>
-                        <li className={style.li}><Link className={style.link} href="/consultas">Consultas</Link></li>
-                    </ul>   
+                        <li className={style.li}><button className={style.menu_button}
+                        onClick={() => setShowSubMenu(!showSubMenu)}>Home</button>
+                            {showSubMenu && (
+                            <ul className={style.submenu}>
+                            <li><Link className={style.link} href="/">Listar</Link></li>
+                            <li><Link className={style.link} href="#">Adicionar</Link></li>
+                            <li><Link className={style.link} href="#">Editar</Link></li>
+                            <li><Link className={style.link} href="#">Excluir</Link></li>
+                            </ul>
+                        )}    
+                        </li>
+                        <li className={style.li}><button className={style.menu_button}
+                        onClick={() => setShowSubMenu(!showSubMenu)}>Médicos</button>
+                            {showSubMenu && (
+                            <ul className={style.submenu}>
+                            <li><Link className={style.link} href="/medicos">Listar</Link></li>
+                            <li><Link className={style.link} href="#">Adicionar</Link></li>
+                            <li><Link className={style.link} href="#">Editar</Link></li>
+                            <li><Link className={style.link} href="#">Excluir</Link></li>
+                            </ul>
+                        )}    
+                        </li>
+                        
+                        <li className={style.li}><button className={style.menu_button}
+                        onClick={() => setShowSubMenu(!showSubMenu)}>Pacientes</button>
+                            {showSubMenu && (
+                            <ul className={style.submenu}>
+                            <li><Link className={style.link} href="/pacientes">Listar</Link></li>
+                            <li><Link className={style.link} href="#">Adicionar</Link></li>
+                            <li><Link className={style.link} href="#">Editar</Link></li>
+                            <li><Link className={style.link} href="#">Excluir</Link></li>
+                            </ul>
+                        )}    
+                        </li>
+
+                        <li className={style.li}><button className={style.menu_button}
+                        onClick={() => setShowSubMenu(!showSubMenu)}>Consultas</button>
+                            {showSubMenu && (
+                            <ul className={style.submenu}>
+                            <li><Link className={style.link} href="/consultas">Listar</Link></li>
+                            <li><Link className={style.link} href="#">Adicionar</Link></li>
+                            <li><Link className={style.link} href="#">Editar</Link></li>
+                            <li><Link className={style.link} href="#">Excluir</Link></li>
+                            </ul>
+                        )}    
+                        </li>
+                    </ul>
             </nav>
             </div>
             
