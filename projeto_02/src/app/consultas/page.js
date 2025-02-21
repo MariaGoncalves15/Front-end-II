@@ -6,6 +6,7 @@ export default function Consultas() {
   
   const [consulta, setConsultas] = useState([])
   const [filteredMedicos, setFilteredMedicos] = useState([]);
+  const [FilteredPacientes, setFilteredPacientes] = useState([]);
   const [search, setSearch] = useState("");
   const [showList, setShowList] = useState(false);
   const containerRef = useRef(null);
