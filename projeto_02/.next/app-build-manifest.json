@@ -17,6 +17,12 @@
       "static/chunks/main-app.js",
       "static/css/app/consultas/page.css",
       "static/chunks/app/consultas/page.js"
+    ],
+    "/medicos/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/medicos/page.css",
+      "static/chunks/app/medicos/page.js"
     ]
   }
 }
