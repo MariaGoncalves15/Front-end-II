@@ -23,7 +23,7 @@ export default function Médicos() {
       setMedicos(data);
       console.log(data);
     } catch (error) {
-      console,log('Ocorreu um erro ao buscar os dados da API:', error.message)
+      console.log('Ocorreu um erro ao buscar os dados da API:', error.message)
     }
 
 

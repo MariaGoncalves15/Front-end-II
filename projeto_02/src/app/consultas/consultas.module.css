@@ -101,19 +101,47 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: auto; /* Centraliza horizontalmente */
-    
   }
 
   .button{
     background-color: #1e5692; 
     margin-top: 3px;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
   }
   
   .meu_button:hover {
     background-color: #1e5692;
   }
   
+  .meu_button02 {
+    background-color:#4476ac; 
+    color: #000000;
+    font-weight: bold;
+    font-size: large;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: auto; /* Centraliza horizontalmente */
+    
+  }
+
+  .button02{
+    background-color: #1e5692; 
+    margin-top: 3px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .meu_button02:hover {
+    background-color: #1e5692;
+  }
+  
+
 
   .style_ul{
     list-style-type: none; /* Remove os pontos da lista */

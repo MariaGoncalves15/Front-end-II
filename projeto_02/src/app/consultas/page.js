@@ -4,16 +4,14 @@ import { useEffect, useState, useRef } from "react";
 
 export default function Consultas() {
   
-  const [consulta, setConsultas] = useState([]);
+  const [consulta, setConsultas] = useState([])
   const [filteredMedicos, setFilteredMedicos] = useState([]);
   const [FilteredPacientes, setFilteredPacientes] = useState([]);
-  // const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("");
   const [showList, setShowList] = useState(false);
   const containerRef = useRef(null);
   const [getMedico, setBuscaMedico] = useState('');
   const [getPaciente, setBuscaPaciente] = useState('');
-  //const medicos_filtrados_consultas = consulta.filter(medicos => medicos.medico.toLowerCase().startsWith(buscaMedico.toLowerCase()));
-  //const pacientes_filtrados_consultas = consulta.filter(pacientes =>(pacientes.paciente.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
   const consultas_filtrados = consulta.filter(consultas => (consultas.medico.toLowerCase().startsWith(getMedico.toLowerCase()) && consultas.paciente.toLocaleLowerCase().startsWith(getPaciente.toLocaleLowerCase())));
   
   
@@ -41,8 +39,8 @@ export default function Consultas() {
         <div className={style.DivMenu}>
         <h1 className={style.h1_titulo}>Lista de Consultas</h1>
 
-        <div className={style.inputTabela} ref={containerRef}>
-            <div className={style.meu_button}>
+    <div className={style.inputTabela} ref={containerRef}>
+          <div className={style.meu_button}>
             <button className={style.meu_button}
             onClick={() => setShowList(true)}>Buscar Médicos</button> 
             {showList && (
@@ -50,8 +48,8 @@ export default function Consultas() {
                 <input className={style.meu_input}
                 type="text" 
                 placeholder="Digite o nome do médico"
-                value={getMedico}
-                onChange={(ev) => setBuscaMedico(ev.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 />
                 
                 <ul className={style.style_ul}>
@@ -62,19 +60,19 @@ export default function Consultas() {
               </div>
             )}
           </div>
-        </div>
+        </div>  
 
         <div className={style.inputTabela} ref={containerRef}>
-            <div className={style.meu_button}>
-            <button className={style.meu_button}
+            <div className={style.meu_button02}>
+            <button className={style.meu_button02}
             onClick={() => setShowList(true)}>Buscar Pacientes</button> 
             {showList && (
               <div>
                 <input className={style.meu_input}
                 type="text" 
                 placeholder="Digite o nome do paciente"
-                value={getPaciente}
-                onChange={(ev) => setBuscaPaciente(ev.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 />
                 
                 <ul className={style.style_ul}>
@@ -100,7 +98,7 @@ export default function Consultas() {
                   </tr>
                 </thead>
                 <tbody>
-                {consultas_filtrados.length > 0 ? (consultas_filtrados.map((consulta) => (
+                  {consultas_filtrados.map((consulta) => (
                     <tr key={consulta.id}>
                       <td className={style.td}>{consulta.id}</td>
                       <td className={style.td}>{consulta.médico}</td>
@@ -108,13 +106,7 @@ export default function Consultas() {
                       <td className={style.td}>{consulta.paciente}</td>
                       <td className={style.td}>{consulta.tipo}</td>
                     </tr>
-                  ))
-                ) : (
-                  <tr>
-                      
-                  </tr>
-              )}
-
+                  ))}
                 </tbody>
               </table>
             </div>
