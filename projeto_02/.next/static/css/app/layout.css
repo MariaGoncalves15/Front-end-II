@@ -21,9 +21,8 @@
 /* NAVEGAÇÃO*/
 .header_nav__tfJls{
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     flex-direction: row;
-   
 }
 
 .header_ul__WYMgF{
@@ -39,8 +38,6 @@
     display: flex;
     margin-left: 40px;
     margin-right: 15px;
-    padding: 10px;
-    color: #FFFF;
 }
 .header_link__wRhDy{
     color: rgb(28, 58, 116);
@@ -50,7 +47,7 @@
     display: flex;
 }
 .header_link__wRhDy:hover{
-    color: #0b1729;
+    color: #b0b8c4;
 }
 
 .header_container_menuMenor__haOxq{
@@ -62,8 +59,6 @@
 @media(max-width:400px){
     .header_nav__tfJls{
         display: none;
-        flex-wrap: wrap;  /* Quebra os itens quando não couberem */
-        gap: 10px; /* Adiciona espaço entre os itens */
         
      }
     .header_nav_active__L_zep{
@@ -96,47 +91,6 @@
     }
     
 }
-
-.header_menu_button__0zqJB{
-    background: none;
-    border: none;
-    color: rgb(28, 58, 116);
-    font-weight: 700;
-    transition: color 0.3s ease;
-    font-size: 17px;
-    display: flex;
-    cursor: pointer;
-}
-
-.header_menu-button__w3jGN:hover {
-    color: #091623;
-    border-radius: 5px;
-  }
-  
-  /* Submenu */
-  .header_submenu__cL4m_ {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    background: rgb(24, 74, 140);
-    list-style: none;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 150px;
-  }
-  
-  .header_submenu__cL4m_ li {
-    padding: 8px 12px;
-    color: rgb(214, 203, 203);
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .header_submenu__cL4m_ li:hover {
-    background-color: #4b81be;
-    border-radius: 3px;
-  }
 /*!*****************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************/

@@ -4,14 +4,16 @@ import { useEffect, useState, useRef } from "react";
 
 export default function Consultas() {
   
-  const [consulta, setConsultas] = useState([])
+  const [consulta, setConsultas] = useState([]);
   const [filteredMedicos, setFilteredMedicos] = useState([]);
   const [FilteredPacientes, setFilteredPacientes] = useState([]);
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const [showList, setShowList] = useState(false);
   const containerRef = useRef(null);
   const [getMedico, setBuscaMedico] = useState('');
   const [getPaciente, setBuscaPaciente] = useState('');
+  //const medicos_filtrados_consultas = consulta.filter(medicos => medicos.medico.toLowerCase().startsWith(buscaMedico.toLowerCase()));
+  //const pacientes_filtrados_consultas = consulta.filter(pacientes =>(pacientes.paciente.toLowerCase().startsWith(buscaPaciente.toLowerCase())));
   const consultas_filtrados = consulta.filter(consultas => (consultas.medico.toLowerCase().startsWith(getMedico.toLowerCase()) && consultas.paciente.toLocaleLowerCase().startsWith(getPaciente.toLocaleLowerCase())));
   
   
@@ -48,8 +50,8 @@ export default function Consultas() {
                 <input className={style.meu_input}
                 type="text" 
                 placeholder="Digite o nome do médico"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                value={getMedico}
+                onChange={(ev) => setBuscaMedico(ev.target.value)}
                 />
                 
                 <ul className={style.style_ul}>
@@ -71,8 +73,8 @@ export default function Consultas() {
                 <input className={style.meu_input}
                 type="text" 
                 placeholder="Digite o nome do paciente"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                value={getPaciente}
+                onChange={(ev) => setBuscaPaciente(ev.target.value)}
                 />
                 
                 <ul className={style.style_ul}>
@@ -98,7 +100,7 @@ export default function Consultas() {
                   </tr>
                 </thead>
                 <tbody>
-                  {consultas_filtrados.map((consulta) => (
+                {consultas_filtrados.length > 0 ? (consultas_filtrados.map((consulta) => (
                     <tr key={consulta.id}>
                       <td className={style.td}>{consulta.id}</td>
                       <td className={style.td}>{consulta.médico}</td>
@@ -106,7 +108,13 @@ export default function Consultas() {
                       <td className={style.td}>{consulta.paciente}</td>
                       <td className={style.td}>{consulta.tipo}</td>
                     </tr>
-                  ))}
+                  ))
+                ) : (
+                  <tr>
+                      
+                  </tr>
+              )}
+
                 </tbody>
               </table>
             </div>
