@@ -5,84 +5,49 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function Header() {
-    const [showSubMenu, setShowSubMenu] = useState(false);
-    return(
+    const [activeSubmenu, setActiveSubmenu] = useState(null);
+
+    const menuItems = [
+        { title: "Home", link: "/", options: ["Listar", "Adicionar", "Editar", "Excluir"] },
+        { title: "Médicos", link: "/medicos", options: ["Listar", "Adicionar", "Editar", "Excluir"] },
+        { title: "Pacientes", link: "/pacientes", options: ["Listar", "Adicionar", "Editar", "Excluir"] },
+        { title: "Consultas", link: "/consultas", options: ["Listar", "Adicionar", "Editar", "Excluir"] },
+    ];
+
+    return (
         <header className={style.DivMenu}>
             <div className={style.Pegatudo}>
-            <div className={style.Divlogo}>
-                    <Image className={style.imagem} src="/images/Med cure.png" alt="Imagem style" width={100} height={100}/>
-            </div>
-            <nav>
+                <div className={style.Divlogo}>
+                    <Image className={style.imagem} src="/images/Med cure.png" alt="Imagem style" width={100} height={100} />
+                </div>
+                <nav>
                     <ul className={style.ul}>
-                        <li className={style.li}>
-                            <div 
-                            className={style.menu_button}
-                            onMouseEnter={() => setShowSubMenu(true)}
-                            onMouseLeave={() => setShowSubMenu(false)}>
-                                Home
-                                {showSubMenu && (
-                            <ul className={style.submenu}>
-                            <li><Link className={style.link} href="/">Listar</Link></li>
-                            <li><Link className={style.link} href="#">Adicionar</Link></li>
-                            <li><Link className={style.link} href="#">Editar</Link></li>
-                            <li><Link className={style.link} href="#">Excluir</Link></li>
-                            </ul>
-                        )}    
-                    </div>
-                    </li>
-                        <li className={style.li}>
-                            <div className={style.menu_button}
-                        onMouseEnter={() => setShowSubMenu(true)}
-                        onMouseLeave={() => setShowSubMenu(false)}>
-                            Médicos
-                            {showSubMenu && (
-                            <ul className={style.submenu}>
-                            <li><Link className={style.link} href="/medicos">Listar</Link></li>
-                            <li><Link className={style.link} href="#">Adicionar</Link></li>
-                            <li><Link className={style.link} href="#">Editar</Link></li>
-                            <li><Link className={style.link} href="#">Excluir</Link></li>
-                            </ul>
-                        )}    
-                    </div>
-                    </li>
-                        
-                        <li className={style.li}>
-                            <div className={style.menu_button}
-                        onMouseEnter={() => setShowSubMenu(true)}
-                        onMouseLeave={() => setShowSubMenu(false)}>
-                            Pacientes
-                            {showSubMenu && (
-                            <ul className={style.submenu}>
-                            <li><Link className={style.link} href="/pacientes">Listar</Link></li>
-                            <li><Link className={style.link} href="#">Adicionar</Link></li>
-                            <li><Link className={style.link} href="#">Editar</Link></li>
-                            <li><Link className={style.link} href="#">Excluir</Link></li>
-                            </ul>
-                        )}    
-                        </div>
-                        </li>
-
-                        <li className={style.li}>
-                            <div className={style.menu_button}
-                            onMouseEnter={() => setShowSubMenu(true)}
-                            onMouseLeave={() => setShowSubMenu(false)}>
-                                Consultas
-                            {showSubMenu && (
-                            <ul className={style.submenu}>
-                            <li><Link className={style.link} href="/consultas">Listar</Link></li>
-                            <li><Link className={style.link} href="#">Adicionar</Link></li>
-                            <li><Link className={style.link} href="#">Editar</Link></li>
-                            <li><Link className={style.link} href="#">Excluir</Link></li>
-                            </ul>
-                        )}    
-                        </div>
-                            
-                        </li>
+                        {menuItems.map((item, index) => (
+                            <li 
+                                key={index} 
+                                className={style.li}
+                                onMouseEnter={() => setActiveSubmenu(index)}
+                                onMouseLeave={() => setActiveSubmenu(null)}
+                            >
+                                <div className={style.menu_button}>
+                                    {item.title}
+                                    {activeSubmenu === index && (
+                                        <ul className={style.submenu}>
+                                            {item.options.map((option, subIndex) => (
+                                                <li key={subIndex}>
+                                                    <Link className={style.link} href={item.link}>
+                                                        {option}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                            </li>
+                        ))}
                     </ul>
-            </nav>
+                </nav>
             </div>
-            
         </header>
-    )
+    );
 }
-
