@@ -9,7 +9,12 @@
     display: flex;
     align-items: center;
     position: relative;
+    
 }
+
+/* .body{
+    padding-top: 80px;
+} */
 
 
 .imagem{
@@ -36,6 +41,7 @@
 
 .ul{
     display: flex;
+    position: relative;
     flex-direction: row;
     list-style: none;
     padding: 0;
@@ -47,7 +53,8 @@
     display: flex;
     margin-left: 40px;
     margin-right: 15px;
-    padding: 5px;
+    padding: 10px;
+    position: relative;
 }
 
 .link{
@@ -107,9 +114,13 @@
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    position: relative;
-    top: 10%;  /* Faz com que o submenu apareça logo abaixo do item de menu */
-    
+    /* position: relative; */
+    position: absolute;
+    top: 100%; /*Garante que ele apareça abaixo do menu principal*/
+    left: 0;
+    background-color: #23578f;
+    padding: 10px;
+    z-index: 999;
 }
 
 .li:hover .submenu {
@@ -129,7 +140,7 @@
 
 .submenu li a {
     text-decoration: none;
-    color: rgb(28, 58, 116);
+    color: rgb(6, 6, 6);
     font-weight: bold;
     display: block;
 }
