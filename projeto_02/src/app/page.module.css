@@ -13,9 +13,50 @@
 .paragrafo{
   margin-top: 20px;
   text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  color: #000;
 }
 
 .h1{
   margin-top: 50px;
   text-align: center;
+}
+
+
+.CardsContainer {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 30px; /* Espaço entre os cards */
+  height: 90vh; /* Opcional: ajusta a altura da seção */
+}
+
+.Card {
+  background-color: rgb(47, 136, 165);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Centraliza o texto dentro do card */
+  width: 450px; /* Define um tamanho fixo */
+  
+}
+
+.Card2{
+  background-color: rgb(55, 92, 132);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Centraliza o texto dentro do card */
+  width: 300px; /* Define um tamanho fixo */
+}
+
+
+
+
+@media (max-width: 400px) {
+  .CardsContainer {
+      flex-direction: column;
+      
+  }
 }

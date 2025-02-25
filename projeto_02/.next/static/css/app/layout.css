@@ -124,6 +124,7 @@
     background-color: #23578f;
     padding: 10px;
     z-index: 999;
+    border-radius: 5px;
 }
 
 .header_li__uCoIN:hover .header_submenu__cL4m_ {

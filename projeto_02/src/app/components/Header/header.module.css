@@ -121,6 +121,7 @@
     background-color: #23578f;
     padding: 10px;
     z-index: 999;
+    border-radius: 5px;
 }
 
 .li:hover .submenu {
