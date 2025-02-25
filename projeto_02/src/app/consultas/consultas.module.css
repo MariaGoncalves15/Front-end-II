@@ -86,7 +86,9 @@
     margin: auto; /* Centraliza horizontalmente */
     text-align: center;
     margin-top: 20px;
-    display: flex;
+    display: flex; /* Alinha os itens na horizontal */
+    justify-content: center; /* Centraliza no eixo horizontal */
+    align-items: center; /* Centraliza no eixo vertical */
   }
 
 
@@ -166,3 +168,5 @@
     border-color :#4476ac;
     box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
   }
+
+  

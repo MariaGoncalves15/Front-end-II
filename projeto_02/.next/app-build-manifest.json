@@ -12,11 +12,11 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/medicos/page": [
+    "/consultas/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/medicos/page.css",
-      "static/chunks/app/medicos/page.js"
+      "static/css/app/consultas/page.css",
+      "static/chunks/app/consultas/page.js"
     ],
     "/pacientes/page": [
       "static/chunks/webpack.js",
@@ -24,11 +24,11 @@
       "static/css/app/pacientes/page.css",
       "static/chunks/app/pacientes/page.js"
     ],
-    "/consultas/page": [
+    "/medicos/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/consultas/page.css",
-      "static/chunks/app/consultas/page.js"
+      "static/css/app/medicos/page.css",
+      "static/chunks/app/medicos/page.js"
     ]
   }
 }
